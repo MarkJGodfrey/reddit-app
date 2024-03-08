@@ -1,25 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { changeSearchTerm, loadPosts, searchTermSelector } from '../../app/postsSlice';
+import { changeSearchTerm, fetchPosts, searchTermSelector,postsSlice } from '../../app/postsSlice';
+//import { fetchPosts } from '../../utils/utils';
 
 const Header = () => {
     const [currentSearchTerm, setCurrentSearchTerm] = useState('');
     const searchTerm = useSelector(searchTermSelector);
     const dispatch = useDispatch();
   
-    useEffect(() => {
-        setCurrentSearchTerm(searchTerm);
-      }, [searchTerm]);
+    // useEffect(() => {
+    //     setCurrentSearchTerm(searchTerm);
+    //   }, [searchTerm]);
 
     const handleSearchTermChange = (e) => {
       setCurrentSearchTerm(e.target.value);
     };
   
-    const handleSearch = (e) => {
+    const handleSearch = async (e) => {
+        e.preventDefault();
         if(currentSearchTerm){
-            e.preventDefault();
-            dispatch(changeSearchTerm(currentSearchTerm));
-            loadPosts(searchTerm);
+          dispatch(changeSearchTerm(currentSearchTerm));
+          dispatch(fetchPosts(currentSearchTerm));
         }
     };
 

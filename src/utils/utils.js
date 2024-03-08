@@ -1,4 +1,4 @@
-const child = {
+export const child = {
     kind: "t3",
     data: {
         approved_at_utc: null,
@@ -141,10 +141,32 @@ export const searchResults = {
     facets: {},
     after: "t3_txoilz",
     geo_filter: "",
-    children: [child, child, child, child, child, child, child, child, child, child, child],
+    children: [child],// child, child, child, child, child, child, child, child, child, child],
     before: null
 }};
 
-export const fetchPosts = (searchTerm) => {
-    return searchResults.data.children.map((child)=>child.data);
+export const fetchPostsBySearchTerm = async (searchTerm) => {
+    // const response = await fetch('https://www.reddit.com/search.json?q=cake%20recipes');
+    // const json = await response.json();
+  
+    // return json.data.children.map((post) => post.data);
+  // const response = Promise.resolve(searchResults);
+   return searchResults.data.children.map((child)=>child.data)
+};
+
+export const getAgeString = (created) =>{
+    const createdob = new Date(created*1000);        
+    const now = new Date();
+    const mselapsed = now-createdob;//milliseconds since post creation
+    if((mselapsed)<31556952000){//a year
+        if((mselapsed)<2629746000){//a month
+            if((mselapsed)<604800000){//a week
+                if((mselapsed)<86400000){//a day
+                    if((mselapsed)<3600000){//an hour
+                        return `${Math.floor(mselapsed/60000)} minutes`;
+                    } else{ return `${Math.floor(mselapsed/3600000)} hours`}
+                } else{ return `${Math.floor(mselapsed/86400000)} days`}
+            } else{ return `${Math.floor(mselapsed/604800000)} weeks`}
+        } else{ return `${Math.floor(mselapsed/2629746000)} months`}
+    } else{ return `${Math.floor(mselapsed/31556952000)} years`}
 }

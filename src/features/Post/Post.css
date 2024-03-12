@@ -1,0 +1,26 @@
+.post{
+    padding: 16px;
+    font-size: 11px;
+    line-height: 24px;
+    color: #666;
+}
+.post h2{
+    font-size: 14px;
+    color: #555;
+}
+.titlepic{
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.post img{
+    object-fit: cover;
+    object-position: top;
+    width: 138px;
+    height: 98px;
+    border-radius: 3px;
+}
+.upvotes{
+    line-height: 14px;
+}

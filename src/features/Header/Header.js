@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { changeSearchTerm, fetchPosts, searchTermSelector,postsSlice } from '../../app/postsSlice';
+import './Header.css';
 //import { fetchPosts } from '../../utils/utils';
 
 const Header = () => {
@@ -27,8 +28,9 @@ const Header = () => {
     return (
         <header>
           <div className="logo">
+          <img src={require('../../resources/images/redditliteLogo.png')} alt='redditlite Logo'/>
             <p>
-              Reddit<span>Lite</span>
+              reddit<span>Lite</span>
             </p>
           </div>
           <form className="search-bar" onSubmit={handleSearch}>
@@ -40,7 +42,7 @@ const Header = () => {
               aria-label="Search posts"
             />
             <button type="submit" onClick={handleSearch} aria-label="Search">
-              SEARCH
+            <i className="fa fa-search"></i>
             </button>
           </form>
         </header>

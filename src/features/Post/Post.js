@@ -2,19 +2,28 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { changeSearchTerm, postsSelector, loadPosts } from '../../app/postsSlice';
 import { getAgeString } from '../../utils/utils';
+import './Post.css';
 
 const Post = ({
     subreddit,
     author,
     created,
     title,
-    thumbnail,}) => {
+    thumbnail,
+    upvotes,
+    numComments,
+    }) => {
 
     return (
-    <div>
-     {`${subreddit} . posted by u/${author} ${getAgeString(created)} ago`}
-        {/* <img src={preview.enabled}/> */}
-    <img src={thumbnail}/>
+    <div className='post'>
+        {`${subreddit} . posted by u/${author} ${getAgeString(created)} ago`}
+        <div className='titlepic'>
+            <h2>{title}</h2>
+            <figure>
+            <img src={thumbnail}/>
+            </figure>
+        </div>
+        <p className='upvotes'>{`${upvotes} upvotes  ${numComments} comments`}</p>
     </div>
     )
 };

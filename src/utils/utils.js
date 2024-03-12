@@ -141,7 +141,7 @@ export const searchResults = {
     facets: {},
     after: "t3_txoilz",
     geo_filter: "",
-    children: [child],// child, child, child, child, child, child, child, child, child, child],
+    children: [child, child, child, child, child, child, child, child, child, child, child],
     before: null
 }};
 

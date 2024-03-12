@@ -1,0 +1,11 @@
+.postlist{
+    width: calc(100vw - 67px);
+    max-width: 990px;
+    margin: 30px auto 0 auto;
+    background-color: white;
+    border: solid 1px #ccc;
+    border-radius: 3px;
+}
+.post + .post{
+    border-top: solid 1px #ccc;
+}

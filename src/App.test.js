@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { userEvent } from '@testing-library/user-event';
 import { store } from './app/store';
 import App from './App';
-import { fetchPostsBySearchTerm, searchResults, child, getAgeString } from './utils/utils';
+import { searchResults } from './utils/utils';
 import '@testing-library/jest-dom';
 
 // const fetchPostsBySearchTerm = jest.fn(() => {
@@ -24,6 +24,6 @@ it('displays r/19684 . posted by u/6ix3eet 4 months ago when a search is made', 
     userEvent.click(button);
   }, 250);
 
-  const result = await screen.findByText(new RegExp(`r/19684 . posted by u/6ix3eet ${getAgeString(child.data.created_utc)} ago`, "i"),{timeout: 5000});
+  const result = await screen.findByText(new RegExp(`r/19684 . posted by u/6ix3eet 4 months ago`, "i"),{timeout: 5000});
   expect(result).toBeInTheDocument();
 })

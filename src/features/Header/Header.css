@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+header{
+    display: grid;
+    grid-template-columns: minmax(220px, calc(50vw - 150px)) 3fr;
+    height: 48px;
+    border-bottom: solid 1px #edeff1;
+    background-color: white;
+}
+header img{
+    height: 30px;
+    width: auto;
+    margin: 8px 6px 0 18px;
+    background-color: transparent;
+}
+.logo{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    display: flex;
+    height: fit-content;
+    width: fit-content;
+    background-color: transparent;
+    padding-right: 40px;
+}
+header p{
+    display: inline-block;
+    color: #ff4500;
+    font-weight: 700;
+    font-size: 28px;
+    font-family: 'Lexend';
+    line-height: 48px;
+    background-color: transparent;
+}
+.logo span{
+    color: black;
+    font-weight: 300;
+    font-family: 'Lexend';
+    background-color: transparent;
+}
+form{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    display: flex;
+    width: auto;
+    background-color: transparent;
+    align-items: top;
+}
+input{
+    border: none;
+    background-color: #f6f7f8;
+    outline: solid 1px #edeff1;
+    border-radius: 19px;
+    width: 40vw;
+    max-width: 300px;
+    height: 38px;
+    margin-top: 5px;
+    padding-left: 20px;
+}
+input:hover, input:focus{
+    background-color: white;
+    outline: solid 1px blue;
+}
+button{
+    position: relative;
+    right: 38px;
+    height: 38px;
+    width: 38px;
+    background-color: rgba(0, 0, 0, 0.02);
+    border: none;
+    border-radius: 19px;
+    margin-top: 5px;
+}
+button:hover{
+    background-color: rgba(0, 0, 0, 0.07);
+    border: none;
+    border-radius: 19px;
+}
+button:active{
+    background-color: rgba(0, 0, 0, 0.04);
+    border: none;
+    border-radius: 19px;
+}
+i{
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    font-size: 24px !important;
+    color: #878c93;
+    background-color: transparent;
+
+}

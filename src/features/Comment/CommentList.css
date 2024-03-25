@@ -1,0 +1,165 @@
+.banner{
+    background-color: #373c3f;
+    color: white;
+    font-size: 22px;
+    font-weight: 700;
+    padding: 14px 30px 38px 30px;
+}
+.post_column{
+    width: calc(100vw - 67px);
+    max-width: 976px;
+    margin: 20px auto 20px auto;
+    text-decoration: none;
+    background-color: white;
+    border-radius: 4px;
+    border: solid 1px #ccc;
+}
+.post_big{
+    padding: 16px;
+    font-size: 11px;
+    line-height: 24px;
+    color: #666;
+}
+.post_big h2{
+    font-size: 16px;
+    color: black;
+}
+.body{
+    font-size: 14px;
+    color: #444;
+    padding-bottom: 10px;
+}
+.post_big figure{
+    margin-top: 16px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.imageCounterContainer{
+    position: absolute;
+    width: calc(100% - 8px);
+    top: 3px;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
+.imageCounter{
+    color: black;
+    border: none;
+    padding: 0 4px 0 4px;
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 1px 0 5px -1px;
+}
+.post_big img{
+    margin: 0 auto 0 auto;
+    object-fit: cover;
+    object-position: top;
+    max-width: 100%;
+    max-height: calc(100vh - 60px);
+    border-radius: 3px;
+}
+.changeImageContainer{
+    position: absolute;
+    width: calc(100% - 8px);
+    bottom: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+.incrementImage, .decrementImage{
+    border: none;
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+.incrementImage i{
+    position: relative;
+    left: 2px;
+    bottom: 0;
+}
+.decrementImage i{
+    position: relative;
+    right: 2px;
+    bottom: 0;
+}
+.incrementImage{
+    box-shadow: 1px 0 5px -1px;
+}
+.decrementImage{
+    box-shadow: -1px 0 5px -1px;
+}
+.incrementImage:hover, .decrementImage:hover{
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+}
+.commentList{
+    padding: 0 26px 26px 26px;
+}
+
+.postPageLoading{
+    height: 80vh;
+    width: calc(100% - 32px);
+    padding: 16px;
+}
+.name-age{
+    margin-top: 6px;
+    height: 13px;
+    width: calc(100% - 40px);
+    max-width: 330px;
+    border-radius: 6.5px;
+}
+.title-pic{
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 32px);
+}
+@media only screen and (max-width: 470px) {
+    .title-pic{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+}
+.title{
+    margin-top: 9px;
+    height: 16px;
+    width: 400px;
+    max-width: calc(100% - 160px);
+    border-radius: 8px;
+}
+.postPageImage{
+    margin: 16px auto 0 auto;
+    object-fit: cover;
+    object-position: top;
+    width: 70%;
+    height: 70%;
+    border-radius: 3px;
+}
+.comments-upvotes{
+    margin-top: 13px;
+    height: 13px;
+    width: calc(100% - 40px);
+    max-width: 210px;
+    border-radius: 6.5px;
+}
+  @keyframes placeHolderShimmer {
+    0% {
+      background-position: 0 0
+    }
+    100% {
+      background-position:  100vw 0
+    }
+  }
+  .animated-background {
+    animation-duration: 1.6s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+    background: linear-gradient(to right, #ddd 0%, #f9f9f9 20%, #ddd 40%);
+    background-size: 100vw auto;
+    background-attachment: fixed;
+    position: relative;
+  }

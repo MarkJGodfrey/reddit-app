@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { changeSearchTerm, fetchPosts, searchTermSelector,postsSlice } from '../../app/postsSlice';
+import { changeSearchTerm } from '../../app/postsSlice';
+import { useNavigate, createSearchParams, Link } from 'react-router-dom';
 import './Header.css';
-//import { fetchPosts } from '../../utils/utils';
 
 const Header = () => {
     const [currentSearchTerm, setCurrentSearchTerm] = useState('');
-    const searchTerm = useSelector(searchTermSelector);
     const dispatch = useDispatch();
-  
+    const navigate = useNavigate();
     // useEffect(() => {
     //     setCurrentSearchTerm(searchTerm);
     //   }, [searchTerm]);
@@ -20,19 +19,22 @@ const Header = () => {
     const handleSearch = async (e) => {
         e.preventDefault();
         if(currentSearchTerm){
-          dispatch(changeSearchTerm(currentSearchTerm));
-          dispatch(fetchPosts(currentSearchTerm));
+          const searchQuery = {q: currentSearchTerm, type: 'link'};
+          const query = createSearchParams(searchQuery);
+          navigate(`/search?${query}`);
         }
     };
 
     return (
         <header>
+          <Link to={'/'}>
           <div className="logo">
           <img src={require('../../resources/images/redditliteLogo.png')} alt='redditlite Logo'/>
             <p>
               reddit<span>Lite</span>
             </p>
           </div>
+          </Link>
           <form className="search-bar" onSubmit={handleSearch}>
             <input
               type="text"

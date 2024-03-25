@@ -1,0 +1,65 @@
+.postLoading{
+    height: 144px;
+    width: calc(100% - 32px);
+    padding: 16px;
+}
+.name-age{
+    margin-top: 6px;
+    height: 13px;
+    width: calc(100% - 40px);
+    max-width: 330px;
+    border-radius: 6.5px;
+}
+.title-pic{
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 32px);
+}
+@media only screen and (max-width: 470px) {
+    .title-pic{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+}
+.title{
+    margin-top: 9px;
+    height: 16px;
+    width: 400px;
+    max-width: calc(100% - 160px);
+    border-radius: 8px;
+}
+.image{
+    object-fit: cover;
+    object-position: top;
+    width: 138px;
+    height: 98px;
+    border-radius: 3px;
+}
+.comments-upvotes{
+    margin-top: 13px;
+    height: 13px;
+    width: calc(100% - 40px);
+    max-width: 210px;
+    border-radius: 6.5px;
+}
+  @keyframes placeHolderShimmer {
+    0% {
+      background-position: 0 0
+    }
+    100% {
+      background-position:  100vw 0
+    }
+  }
+  .animated-background {
+    animation-duration: 1.6s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+    background-color: #f6f7f8;
+    background: linear-gradient(to right, #ddd 0%, #f9f9f9 20%, #ddd 40%);
+    background-size: 100vw auto;
+    background-attachment: fixed;
+    position: relative;
+  }

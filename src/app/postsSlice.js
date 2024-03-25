@@ -20,24 +20,7 @@ export const postsSlice = createSlice({
     isLoading: false,
     hasError: false
   },
-  reducers: {// DO NOT USE BUILDER NOTATION FOR REDUCERS
-      changeSearchTerm(state,action){
-        state.searchTerm=action.payload;
-      },
-      // getPosts(state){ 
-      //   state.isLoading=true;
-      //   state.hasError=false;
-      // },
-      // savePosts(state, action){
-      //   state.isLoading=false;
-      //   state.hasError=false;
-      //   state.posts=action.payload;
-      // },
-      // postsError(state){
-      //   state.isLoading=false;
-      //   state.hasError=true;
-      // },
-  },
+  //reducers: {// DO NOT USE BUILDER NOTATION FOR REDUCERS
   extraReducers: (builder) => {// DO USE BUILDER NOTATION FOR EXTRAREDUCERS
     builder
       .addCase(fetchPosts.pending, (state) => { 
@@ -57,7 +40,8 @@ export const postsSlice = createSlice({
 });
 
 export const postsSelector = (state) => state.posts.posts;
-export const searchTermSelector = (state) => state.posts.searchTerm;
+export const isLoadingSelector = (state) => state.posts.isLoading;
+export const hasErrorSelector = (state) => state.posts.hasError;
 export const { 
   changeSearchTerm,
   // getPosts,

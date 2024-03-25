@@ -4,6 +4,9 @@
     line-height: 24px;
     color: #666;
 }
+.post:hover{
+    outline: solid 1px #898989;
+}
 .post h2{
     font-size: 14px;
     color: #555;

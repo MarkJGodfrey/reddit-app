@@ -20,10 +20,10 @@ const Post = ({
         <div className='titlepic'>
             <h2>{title}</h2>
             <figure>
-            <img src={thumbnail}/>
+            {thumbnail==='default'? <></> : <img src={thumbnail}/>}
             </figure>
         </div>
-        <p className='upvotes'>{`${upvotes} upvotes  ${numComments} comments`}</p>
+        <p className='upvotes'>{upvotes} upvotes &nbsp; {numComments} comments</p>
     </div>
     )
 };

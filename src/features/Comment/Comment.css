@@ -1,0 +1,29 @@
+.comment{
+    margin-top: 14px;
+}
+.indented{
+    padding-left: 10px;
+    margin: 10px 0 0 15px;
+    border-left: solid gray;
+}
+.name{
+    font-size: 11px;
+    padding: 10px 0 0 10px;
+}
+.name span{
+    font-size: 12px;
+    color: #777;
+}
+.upvotes{
+    font-size: 11px;
+    font-weight: 700;
+    color: #666;
+}
+.user{
+    display: flex;
+}
+.user img{
+    height: 30px;
+    width: auto;
+    background-color: transparent;
+}

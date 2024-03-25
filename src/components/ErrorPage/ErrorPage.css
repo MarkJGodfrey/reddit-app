@@ -1,0 +1,43 @@
+.errorMessage{
+    text-align: center;
+    background-color: white;
+    width: calc(100vw - 127px);
+    max-width: 976px;
+    margin: 20px auto 20px auto;
+    border-radius: 4px;
+    padding: 30px;
+}
+.errorMessage p{
+    text-align: left;
+    font-size: 14px;
+    color: #444;
+}
+.returnHome{
+    margin-top: 20px;
+    background-color: #ff4500;
+    border-top: 1px solid #ff5715;
+    border-right: 1px solid #ec4100;
+    border-bottom: 1px solid #d53900;
+    border-left: 1px solid #ec4100;
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 4px -1px;
+    text-align: center;
+}
+.returnHome:hover{
+    background-color: #ff5715;
+    border-top: 1px solid #ff6528;
+    border-right: 1px solid #ff4500;
+    border-bottom: 1px solid #ec4100;
+    border-left: 1px solid #ff4500;
+    cursor: pointer;
+}
+.returnHome i{
+    background-color: transparent;
+    position: relative;
+    font-size: 24px !important;
+    color: white;
+    left: 0;
+    top: 0;
+}

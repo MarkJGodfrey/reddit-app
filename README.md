@@ -1,12 +1,12 @@
-# Getting Started with Create React App and Redux
+# RedditLite
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template. The project is a web app that enables users to browse Reddit posts and comments using a search bar.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+The redditlite app features a **header** with a logo and **search bar**. The main body of the web app, by default, displays a **list of posts** from r/all, upon entering a search term in the search bar, the list will display posts relating to the provided search term. Below the header and above the search results, the user is provided with **filter buttons** that specify the type of search result (either posts or comments). As it stands however, due to difficulties with the reddit API, the comments filter cannot be used. Users are able to click on posts displayed in the search results to view the **full post page**. The post page features all of the basic post information (subreddit, author, post age, title, body, and upvotes) along with a **media gallery** that allows users to flick through any images provided with the post. Below the post itself, the user will find a **comments thread**. The comments thread, at present, only displays as many comments as are provided by default by the reddit API. Due to requests for the post page data being rejected by the reddit API, unfortunately, the user is not able to access the post page for particular posts. Upon clicking on a post search result, the user will be met with post page using mock data obtained directly from a reddit URI. This was included for demonstrative purposes.
 
-### `npm start`
+## Future Work
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.

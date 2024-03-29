@@ -420,14 +420,14 @@ export const postComments = [
 
 export const fetchPostsBySearchTerm = async ({searchTerm, resultType}) => {
     let kind = 't3';
-    if(resultType==='comment'){kind = 'comment'}
+    // if(resultType==='comment'){kind = 't1'}
     if(!searchTerm){
         const response = await fetch('https://www.reddit.com/r/all/.json');
         const json = await response.json();
         return json.data.children.map((post) =>{
             if(post.kind===kind){
                 return post.data;
-            }
+            } else{return null}
         });
         // return allResults.data.children.map((child)=>child.data)
     } else{
@@ -436,7 +436,7 @@ export const fetchPostsBySearchTerm = async ({searchTerm, resultType}) => {
         return json.data.children.map((post) =>{
             if(post.kind===kind){
                 return post.data;
-            }
+            } else{return null}
         });
         // return allResults.data.children.map((child)=>child.data)
     }

@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { changeSearchTerm, postsSelector, loadPosts } from '../../app/postsSlice';
+import React from 'react';
 import { getAgeString } from '../../utils/utils';
 import './Post.css';
 
@@ -18,9 +16,9 @@ const Post = ({
     <div className='post'>
         {`${subreddit} . posted by u/${author} ${getAgeString(created)} ago`}
         <div className='titlepic'>
-            <h2>{title}</h2>
+            <h2 className='title'>{title}</h2>
             <figure>
-            {thumbnail==='default'? <></> : <img src={thumbnail}/>}
+            {thumbnail==='default'? <></> : <img src={thumbnail} alt='post thumbnail'/>}
             </figure>
         </div>
         <p className='upvotes'>{upvotes} upvotes &nbsp; {numComments} comments</p>

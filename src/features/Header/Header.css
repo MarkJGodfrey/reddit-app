@@ -32,14 +32,14 @@ header p{
     margin-left: 6px;
 }
 @media only screen and (max-width: 470px) {
-    .logo{
-        margin: 0 10px 0 10px;
-    }
     header p{
         display: none;
     }
     header{
-        grid-template-columns: minmax(60px, calc(15vw + 149.5px)) 3fr;
+        grid-template-columns: 82px 1fr;
+    }
+    .search-bar input{
+        width: 100%;
     }
 }
 .logo span{
@@ -52,11 +52,11 @@ form{
     grid-column-start: 2;
     grid-column-end: 3;
     display: flex;
-    width: auto;
+    width: 100%;
     background-color: transparent;
     align-items: top;
 }
-input{
+.search-bar input{
     border: none;
     background-color: #f6f7f8;
     outline: solid 1px #edeff1;
@@ -98,5 +98,4 @@ i{
     font-size: 24px !important;
     color: #878c93;
     background-color: transparent;
-
 }

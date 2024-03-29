@@ -7,16 +7,21 @@
 .post:hover{
     outline: solid 1px #898989;
 }
-.post h2{
-    font-size: 14px;
-    color: #555;
-}
 .titlepic{
     width: auto;
     display: flex;
     justify-content: space-between;
 }
-
+.title{
+    
+    font-size: 14px;
+    color: #555;
+    display: inline;
+    width: calc(100% - 154px);
+    height: min-content;
+    margin-bottom: 10px;
+    overflow-wrap: break-word;
+}
 .post img{
     object-fit: cover;
     object-position: top;

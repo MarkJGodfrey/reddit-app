@@ -22,14 +22,14 @@
         width: 100%;
     }
 }
-.title{
+.titleLoading{
     margin-top: 9px;
     height: 16px;
     width: 400px;
     max-width: calc(100% - 160px);
     border-radius: 8px;
 }
-.image{
+.imageLoading{
     object-fit: cover;
     object-position: top;
     width: 138px;

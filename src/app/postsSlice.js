@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { fetchPostsBySearchTerm, searchResults } from "../utils/utils";
-import { useDispatch } from "react-redux";
+import { fetchPostsBySearchTerm } from "../utils/utils";
 
 export const fetchPosts = createAsyncThunk(
   "posts/getPosts",

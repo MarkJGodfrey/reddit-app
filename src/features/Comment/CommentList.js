@@ -13,7 +13,7 @@ const CommentList = () => {
     useEffect(()=>{
         dispatch(fetchComments(`${subreddit}/comments/${id}/${title}/`));
 
-    },[subreddit, id, title])
+    },[subreddit, id, title, dispatch])
     const comments = useSelector(commentsSelector);
     const isLoading = useSelector(isLoadingSelector);
     const hasError = useSelector(hasErrorSelector);
@@ -25,7 +25,7 @@ const CommentList = () => {
                 <div className='post_column'>
                     <div className='postPageLoading'>
                         <div className='name-age animated-background'></div>
-                        <div className='title animated-background'></div>
+                        <div className='titleLoading animated-background'></div>
                         <div className='postPageImage animated-background'></div>
                         <div className='comments-upvotes animated-background'></div>
                     </div>
@@ -70,7 +70,7 @@ const CommentList = () => {
                                 <div className='imageCounterContainer'>
                                     <div className='imageCounter'>{imageDisplayed+1} of {imgs.length}</div>
                                 </div>
-                                <img src={imgs[imageDisplayed]}/>
+                                <img src={imgs[imageDisplayed]} alt={`${imageDisplayed+1} of ${imgs.length}`}/>
                                 <div className='changeImageContainer'>
                                     <button className='decrementImage' onClick={handleDecrementImage}><i className="fa fa-arrow-left"></i></button>
                                     <button className='incrementImage' onClick={handleIncrementImage}><i className="fa fa-arrow-right"></i></button>
@@ -91,7 +91,7 @@ const CommentList = () => {
                                             replies={comment.data.replies}
                                             key={index}
                                             />
-                                }
+                                } else{return null}
                             })}
                         </div>
                     </div>

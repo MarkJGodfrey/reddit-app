@@ -1,16 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { changeSearchTerm } from '../../app/postsSlice';
-import { useNavigate, createSearchParams, Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useNavigate, createSearchParams, Link, useSearchParams } from 'react-router-dom';
 import './Header.css';
 
 const Header = () => {
+    const [searchParams] = useSearchParams();
     const [currentSearchTerm, setCurrentSearchTerm] = useState('');
-    const dispatch = useDispatch();
+    useEffect(()=>{
+      const initialSearchTerm = searchParams.get('q')?searchParams.get('q'):'';
+      setCurrentSearchTerm(initialSearchTerm);
+    },[searchParams])
     const navigate = useNavigate();
-    // useEffect(() => {
-    //     setCurrentSearchTerm(searchTerm);
-    //   }, [searchTerm]);
 
     const handleSearchTermChange = (e) => {
       setCurrentSearchTerm(e.target.value);

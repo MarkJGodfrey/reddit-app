@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { getAgeString } from '../../utils/utils';
 import './Comment.css';
 
@@ -21,15 +21,15 @@ const Comment = ({
             <p className='upvotes'>{upvotes} upvotes</p>
             <div>
             {typeof(replies)==='object' ? replies.data.children.map((reply,index)=>{
-                if(reply.kind==='t1'){
-                    return <Comment
-                            author={reply.data.author}
-                            created={reply.data.created_utc}
-                            body={reply.data.body}
-                            upvotes={reply.data.ups}
-                            replies={reply.data.replies}
-                            key={index}
-                            />}}) : <></>
+                    return (<Comment
+                    author={reply.data.author}
+                    created={reply.data.created_utc}
+                    body={reply.data.body}
+                    upvotes={reply.data.ups}
+                    replies={reply.data.replies}
+                    key={index}
+                    />)
+            }) : <></>
             }
             </div>
 

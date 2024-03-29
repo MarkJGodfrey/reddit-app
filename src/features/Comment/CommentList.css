@@ -40,8 +40,8 @@
     width: calc(100% - 8px);
     top: 3px;
     display: flex;
-    justify-content: end;
-    align-items: end;
+    justify-content: flex-end;
+    align-items: flex-end;
 }
 .imageCounter{
     color: black;
@@ -65,7 +65,7 @@
     bottom: 6px;
     display: flex;
     justify-content: space-between;
-    align-items: end;
+    align-items: flex-end;
 }
 .incrementImage, .decrementImage{
     border: none;
@@ -122,7 +122,7 @@
         width: 100%;
     }
 }
-.title{
+.titleLoading{
     margin-top: 9px;
     height: 16px;
     width: 400px;

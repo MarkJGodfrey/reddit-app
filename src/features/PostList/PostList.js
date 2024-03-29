@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useSearchParams, Link, Navigate } from 'react-router-dom';
 import { postsSelector, isLoadingSelector, hasErrorSelector, fetchPosts } from '../../app/postsSlice';
@@ -47,7 +47,7 @@ const PostList = () => {
         )
     } else{ 
         if(hasError){
-            // return  <Navigate to='/error' />;
+            return  <Navigate to='/error' />;
         } else {
 
             return (
@@ -60,7 +60,6 @@ const PostList = () => {
                         {posts.map((post,index)=>{
                             if(resultType==='comment'){
                                 return <div className='post_container' key={index}>
-                                    <Link to={post.permalink}>
                                     <Comment
                                     subreddit={post.subreddit_name_prefixed}
                                     author={post.author}
@@ -68,7 +67,6 @@ const PostList = () => {
                                     body={post.body}
                                     upvotes={post.ups}
                                     />
-                                    </Link>
                                     </div>
                             } else{
                                 return <div className='post_container' key={index}>
@@ -77,7 +75,7 @@ const PostList = () => {
                                     subreddit={post.subreddit_name_prefixed}
                                     author={post.author}
                                     created={post.created_utc}
-                                    title={post.title}
+                                    title={post.title.replaceAll('&amp;','&')}
                                     thumbnail={post.thumbnail.replaceAll('&amp;','&')}
                                     upvotes={post.ups}
                                     numComments={post.num_comments}
